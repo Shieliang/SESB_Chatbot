@@ -16,7 +16,6 @@ The goal was to solve a real-world problem: **The lack of multi-lingual support 
 This bot uses **RAG (Retrieval-Augmented Generation)** to read official PDF guidelines and answer user queries in Chinese (or English/Malay), bridging the language gap.
 
 ![Demo Screenshot](https://github.com/Shieliang/SESB_Chatbot/blob/main/Demo.png?raw=true)
-*(Note: Please replace the link above with your actual screenshot path after uploading)*
 
 ## ✨ Key Features
 
@@ -31,64 +30,56 @@ The application is deployed on an **AWS EC2 (t2.micro)** instance.
 
 ![Work Flow Screenshot](https://github.com/Shieliang/SESB_Chatbot/blob/main/SESB_Work_Flow.png?raw=true)
 
-Tech Stack:
+### Tech Stack
+* **LLM:** Anthropic Claude 3.5 Sonnet (via AWS Bedrock)
+* **Embeddings:** Amazon Titan Embeddings v2
+* **Vector DB:** FAISS (Local cache for speed)
+* **Orchestration:** LangChain
+* **Frontend:** Streamlit
 
-LLM: Anthropic Claude 3.5 Sonnet (via AWS Bedrock)
+## 🛠️ How to Run Locally
 
-Embeddings: Amazon Titan Embeddings v2
+If you want to run this code on your own machine or EC2 instance, follow these steps:
 
-Vector DB: FAISS (Local cache for speed)
+### 1. Prerequisites
+* An AWS Account with access to **Bedrock** (Claude 3.5 Sonnet enabled).
+* Python 3.9 or higher.
+* An S3 Bucket containing your PDF documents.
 
-Orchestration: LangChain
-
-Frontend: Streamlit
-
-🛠️ How to Run Locally
-If you want to run this code on your own machine or EC2 instance:
-
-1. Prerequisites
-An AWS Account with access to Bedrock (Claude 3.5 Sonnet enabled).
-
-Python 3.9 or higher.
-
-An S3 Bucket containing your PDF documents.
-
-2. Installation
+### 2. Installation
 Clone the repository:
-
-Bash
+```bash
 git clone [https://github.com/Shieliang/SESB_Chatbot.git](https://github.com/Shieliang/SESB_Chatbot.git)
-cd sesb-ai-chatbot
+cd SESB_Chatbot
 
+### 3. Install Dependencies
 Install dependencies:
-
-Bash
+```bash
 pip install -r requirements.txt
 
-3. Configuration
+### 4. Configuration
+Configuration:
 Option A (Local Machine): Configure your AWS credentials using CLI:
-
-Bash
+```bash
 aws configure
 
 Option B (EC2 - Recommended): Attach an IAM Role to your EC2 instance with the following permissions:
+* AmazonBedrockFullAccess
+* AmazonS3ReadOnlyAccess
 
-AmazonBedrockFullAccess
-AmazonS3ReadOnlyAccess
-
-4. Edit Code
+### 5. Edit Code
+Edit Code:
 Open app.py and update the BUCKET_NAME variable with your own S3 bucket name:
-
-Python
+```bash
 # app.py
 BUCKET_NAME = 'your-own-s3-bucket-name'
 
-5. Run the App
-
-Bash
+### 6. Run the App
+Run the App:
+```bash
 streamlit run app.py
 
-🧩 Challenges & Learnings
+###🧩 Challenges & Learnings
 Building this project taught me a lot about Cloud Architecture. Here are the main challenges I faced:
 
 Deployment Permissions: My code crashed on EC2 initially. I learned that hardcoding keys is bad practice; using IAM Roles is the secure way to grant EC2 access to S3 and Bedrock.
@@ -102,6 +93,3 @@ This is a beginner project, so the code might not be perfect! Feedback and Pull 
 
 📄 License
 This project is open-source and available under the MIT License.
-
-
----

@@ -30,7 +30,7 @@ The application is deployed on an **AWS EC2 (t2.micro)** instance.
 
 ![Work Flow Screenshot](https://github.com/Shieliang/SESB_Chatbot/blob/main/Assets/SESB_Work_Flow.png?raw=true)
 
-## Tech Stack
+## ⚙️Tech Stack
 * **LLM:** Anthropic Claude 3.5 Sonnet (via AWS Bedrock)
 * **Embeddings:** Amazon Titan Embeddings v2
 * **Vector DB:** FAISS (Local cache for speed)

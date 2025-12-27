@@ -10,7 +10,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 
 # ================= 配置区 =================
-BUCKET_NAME = 'sagemaker-us-east-1-987762561422' # 你的桶名
+BUCKET_NAME = 'your-s3-bucket-name' # 你的桶名
 DOC_PREFIX = 'Documents/'
 FORM_PREFIX = 'Forms/'
 MODEL_ID = "anthropic.claude-3-5-sonnet-20240620-v1:0"
@@ -57,6 +57,7 @@ def init_resources():
         vectorstore = FAISS.load_local(INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
     else:
         # 如果没有缓存，则生成 (Streamlit 会转圈圈提示用户)
+        st.info("初次运行，正在从 S3 下载文档并构建索引，请稍候... (约需 1-2 分钟)")
         if not os.path.exists('/tmp/docs'): os.makedirs('/tmp/docs')
         all_docs = []
         resp = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=DOC_PREFIX)

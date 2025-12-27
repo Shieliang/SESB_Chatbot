@@ -51,17 +51,20 @@ Clone the repository:
 ```bash
 git clone [https://github.com/Shieliang/SESB_Chatbot.git](https://github.com/Shieliang/SESB_Chatbot.git)
 cd SESB_Chatbot
+```
 
 ### 3. Install Dependencies
 Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
 
 ### 4. Configuration
 Configuration:
 Option A (Local Machine): Configure your AWS credentials using CLI:
 ```bash
 aws configure
+```
 
 Option B (EC2 - Recommended): Attach an IAM Role to your EC2 instance with the following permissions:
 * AmazonBedrockFullAccess
@@ -73,13 +76,15 @@ Open app.py and update the BUCKET_NAME variable with your own S3 bucket name:
 ```bash
 # app.py
 BUCKET_NAME = 'your-own-s3-bucket-name'
+```
 
 ### 6. Run the App
 Run the App:
 ```bash
 streamlit run app.py
+```
 
-###🧩 Challenges & Learnings
+### 🧩 Challenges & Learnings
 Building this project taught me a lot about Cloud Architecture. Here are the main challenges I faced:
 
 Deployment Permissions: My code crashed on EC2 initially. I learned that hardcoding keys is bad practice; using IAM Roles is the secure way to grant EC2 access to S3 and Bedrock.

@@ -107,3 +107,11 @@ This is a beginner project, so the code might not be perfect! Feedback and Pull 
 ## 📄 License
 
 This project is open-source and available under the MIT License.
+
+## ☕ Support My Learning
+
+If you found this project helpful or interesting, feel free to buy me a coffee! It helps keep the AWS EC2 instance running.
+
+<a href="https://www.buymeacoffee.com/shieliang22" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
+</a>

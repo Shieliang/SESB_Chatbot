@@ -93,8 +93,8 @@ Deployment Permissions: My code crashed on EC2 initially. I learned that hardcod
 
 Language Barrier: To ensure accurate retrieval from English docs for Chinese queries, I optimized the LangChain Condense Prompt to handle cross-lingual context switching.
 
-🤝 Contributing
+### 🤝 Contributing
 This is a beginner project, so the code might not be perfect! Feedback and Pull Requests are welcome.
 
-📄 License
+### 📄 License
 This project is open-source and available under the MIT License.

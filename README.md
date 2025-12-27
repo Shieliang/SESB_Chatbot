@@ -85,6 +85,7 @@ streamlit run app.py
 ```
 
 ### 🧩 Challenges & Learnings
+
 Building this project taught me a lot about Cloud Architecture. Here are the main challenges I faced:
 
 Deployment Permissions: My code crashed on EC2 initially. I learned that hardcoding keys is bad practice; using IAM Roles is the secure way to grant EC2 access to S3 and Bedrock.
@@ -94,7 +95,9 @@ Deployment Permissions: My code crashed on EC2 initially. I learned that hardcod
 Language Barrier: To ensure accurate retrieval from English docs for Chinese queries, I optimized the LangChain Condense Prompt to handle cross-lingual context switching.
 
 ### 🤝 Contributing
+
 This is a beginner project, so the code might not be perfect! Feedback and Pull Requests are welcome.
 
 ### 📄 License
+
 This project is open-source and available under the MIT License.

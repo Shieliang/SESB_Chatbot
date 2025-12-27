@@ -15,7 +15,7 @@ The goal was to solve a real-world problem: **The lack of multi-lingual support 
 
 This bot uses **RAG (Retrieval-Augmented Generation)** to read official PDF guidelines and answer user queries in Chinese (or English/Malay), bridging the language gap.
 
-![Demo Screenshot](https://github.com/Shieliang/SESB_Chatbot/blob/main/Demo.png?raw=true)
+![Demo Screenshot](https://github.com/Shieliang/SESB_Chatbot/blob/main/Assets/Demo.png?raw=true)
 
 ## ✨ Key Features
 
@@ -28,9 +28,9 @@ This bot uses **RAG (Retrieval-Augmented Generation)** to read official PDF guid
 
 The application is deployed on an **AWS EC2 (t2.micro)** instance.
 
-![Work Flow Screenshot](https://github.com/Shieliang/SESB_Chatbot/blob/main/SESB_Work_Flow.png?raw=true)
+![Work Flow Screenshot](https://github.com/Shieliang/SESB_Chatbot/blob/main/Assets/SESB_Work_Flow.png?raw=true)
 
-### Tech Stack
+## Tech Stack
 * **LLM:** Anthropic Claude 3.5 Sonnet (via AWS Bedrock)
 * **Embeddings:** Amazon Titan Embeddings v2
 * **Vector DB:** FAISS (Local cache for speed)
@@ -42,11 +42,13 @@ The application is deployed on an **AWS EC2 (t2.micro)** instance.
 If you want to run this code on your own machine or EC2 instance, follow these steps:
 
 ### 1. Prerequisites
+
 * An AWS Account with access to **Bedrock** (Claude 3.5 Sonnet enabled).
 * Python 3.9 or higher.
 * An S3 Bucket containing your PDF documents.
 
 ### 2. Installation
+
 Clone the repository:
 ```bash
 git clone [https://github.com/Shieliang/SESB_Chatbot.git](https://github.com/Shieliang/SESB_Chatbot.git)
@@ -54,12 +56,14 @@ cd SESB_Chatbot
 ```
 
 ### 3. Install Dependencies
+
 Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Configuration
+
 Configuration:
 Option A (Local Machine): Configure your AWS credentials using CLI:
 ```bash
@@ -71,6 +75,7 @@ Option B (EC2 - Recommended): Attach an IAM Role to your EC2 instance with the f
 * AmazonS3ReadOnlyAccess
 
 ### 5. Edit Code
+
 Edit Code:
 Open app.py and update the BUCKET_NAME variable with your own S3 bucket name:
 ```bash
@@ -79,12 +84,13 @@ BUCKET_NAME = 'your-own-s3-bucket-name'
 ```
 
 ### 6. Run the App
+
 Run the App:
 ```bash
 streamlit run app.py
 ```
 
-### 🧩 Challenges & Learnings
+## 🧩 Challenges & Learnings
 
 Building this project taught me a lot about Cloud Architecture. Here are the main challenges I faced:
 
@@ -94,10 +100,10 @@ Deployment Permissions: My code crashed on EC2 initially. I learned that hardcod
 
 Language Barrier: To ensure accurate retrieval from English docs for Chinese queries, I optimized the LangChain Condense Prompt to handle cross-lingual context switching.
 
-### 🤝 Contributing
+## 🤝 Contributing
 
 This is a beginner project, so the code might not be perfect! Feedback and Pull Requests are welcome.
 
-### 📄 License
+## 📄 License
 
 This project is open-source and available under the MIT License.

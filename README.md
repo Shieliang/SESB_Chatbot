@@ -51,7 +51,9 @@ If you want to run this code on your own machine or EC2 instance, follow these s
 
 Clone the repository:
 ```bash
-git clone [https://github.com/Shieliang/SESB_Chatbot.git](https://github.com/Shieliang/SESB_Chatbot.git)
+# Navigate to your desired folder (e.g., Downloads)
+cd C:\Users\YourUsername\Downloads
+git clone https://github.com/Shieliang/SESB_Chatbot.git
 cd SESB_Chatbot
 ```
 

@@ -65,7 +65,7 @@ pip install -r requirements.txt
 ### 4. Configuration
 
 Configuration:
-Option A (Local Machine): Configure your AWS credentials using CLI:
+Option A (Local Machine): Download AWS CLI [Official AWS CLI Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) & configure your AWS credentials:
 ```bash
 aws configure
 ```
